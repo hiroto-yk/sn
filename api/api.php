@@ -49,6 +49,10 @@ if ($form == 'haskell' && ($pro == '\'cri\'' || $pro == '\'snG\'' || $pro == '\'
   $cmd = 'echo "fatal error: the combination of the format and command is impossible." 2>&1';
 }
 
+if($_POST['trfp'] === 'true'){
+  $cmd = './sol/Main sn ' . $tmpfile . ' --trfp';
+}
+
 exec($cmd, $ouput);
 
 printOutput($output);

@@ -1,4 +1,7 @@
 export const params = {
+  trfp: {
+    default: false
+  },
   file: {
     display: 'File',
     type: 'file',

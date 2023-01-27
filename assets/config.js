@@ -5,7 +5,7 @@ export const config = {
 
   address: '/webcui/sn',      // http://localhost:3000/[address]
 
-  webApiUrl: `http://solweb.mydns.jp/webcui/sol/api/api.php`,
+  webApiUrl: `http://solweb.mydns.jp/webcui/sn/api/api.php`,
              //`http://localhost:80/webcui/sn/api/api.php`,
 
   consoleLocation: 'right',    // Placing the console. [left | right | top | bottom]
@@ -52,7 +52,7 @@ export const config = {
       icon: 'mdi-play',
       text: 'Check',
       before: (webcui) => {
-        webcui.updateParam({ key: 'help', value: { value: false } })
+        webcui.updateParam({ key: 'trfp', value: { value: false } })
         webcui.clearConsole();
       },
       after: (webcui, result) => {
@@ -60,13 +60,13 @@ export const config = {
       }
     },
     trfp: {
-      enable: false,
+      enable: true,
       icon: 'mdi-alpha-t',
       text: 'Trfp',
       method: (webcui) => {
         webcui.sendReq(
           (webcui) => {
-            webcui.updateParam({ key: 'help', value: { value: true } })
+            webcui.updateParam({ key: 'trfp', value: { value: true } })
             webcui.clearConsole()
           },
           (webcui, result) => {

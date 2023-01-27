@@ -53,7 +53,7 @@ if($_POST['trfp'] === 'true'){
   $cmd = './sol/Main sn ' . $tmpfile . ' --trfp';
 }
 
-exec($cmd, $ouput);
+exec($cmd, $output);
 
 printOutput($output);
 
